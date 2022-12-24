@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, FlatList, StyleSheet} from 'react-native';
+import {View, Text, FlatList, StyleSheet, Alert} from 'react-native';
 import Header from './components/Header';
 import ListItem from './components/ListItem';
 import AddItem from './components/AddItem';
@@ -36,9 +36,18 @@ const App = () => {
   };
 
   const addItem = text => {
-    setItems(prevItems => {
-      return [{id: uuid.v4(), text}, ...prevItems];
-    });
+    if (!text) {
+      Alert.alert(
+        'Error Kiddo',
+        "Don't be stupid, Type something:🤦‍♂️", // <- this part is optional, you can pass an empty string
+        [{text: 'OK', onPress: () => console.log('OK Pressed')}],
+        {cancelable: false},
+      );
+    } else {
+      setItems(prevItems => {
+        return [{id: uuid.v4(), text}, ...prevItems];
+      });
+    }
   };
   return (
     <View style={styles.container}>
