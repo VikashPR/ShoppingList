@@ -13,7 +13,7 @@
     "@react-native-community/cli": "^10.0.0",
     "@react-native-firebase/app": "^16.5.1",
     "react": "18.1.0",
-    "react-native": "0.70.6",
+    "react-native": "0.80.1",
     "react-native-uuid": "^2.0.1",
     "react-native-vector-icons": "^9.2.0"
   },
